@@ -45,14 +45,13 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 **/android/app/src/main/res/mipmap*/
-**/android/app/google-services.json
-android/app/src/dev/google-services.json
-android/app/src/prod/google-services.json
+google-services.json
 
 # iOS related
 **/ios/Flutter/DartDefines.xcconfig
 ios/Podfile
 ios/Podfile.lock
+GoogleService-Info.plist
 
 # FVM
 .fvm/flutter_sdk
