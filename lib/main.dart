@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  // flavor の取得
+  const flavor = String.fromEnvironment('FLAVOR');
+  print('🎯 FLAVOR : $flavor');
+
   runApp(const MyApp());
 }
 
