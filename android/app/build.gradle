@@ -36,6 +36,7 @@ if (project.hasProperty('dart-defines')) {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
@@ -84,6 +85,8 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
 }
 
 // アイコンを切り替えるためのタスク
@@ -91,6 +94,16 @@ task copySources(type: Copy) {
    from "src/${dartEnvironmentVariables.FLAVOR}/res"
    into 'src/main/res'
 }
+
+// 環境別ディレクトリに配置した google-services.json を android/app にコピーするタスク
+task selectGoogleServicesJson(type: Copy) {
+    from "src/${dartEnvironmentVariables.FLAVOR}/google-services.json"
+    into './'
+}
+
 tasks.whenTaskAdded { task ->
    task.dependsOn copySources
+   if (task.name == 'processDebugGoogleServices' || task.name == 'processReleaseGoogleServices') {
+       task.dependsOn selectGoogleServicesJson
+       }
 }
