@@ -49,6 +49,10 @@ app.*.map.json
 android/app/src/dev/google-services.json
 android/app/src/prod/google-services.json
 
+# iOS related
+**/ios/Flutter/DartDefines.xcconfig
+ios/Podfile
+ios/Podfile.lock
 
 # FVM
 .fvm/flutter_sdk
