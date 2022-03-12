@@ -1,0 +1,22 @@
+name: workflow
+
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  flutter_test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: "Install Flutter"
+        run: ./.github/workflows/scripts/install-flutter.sh 2.10.3
+      - name: flutter test
+        run: flutter pub get && flutter test
