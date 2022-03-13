@@ -1,9 +1,9 @@
 ---
 name: bug
-about: バグ用テンプレート
+about: バグ対応
 title: ''
-labels: bug
-assignees: ''
+labels: ''
+assignees: '@DaigoWakabayashi'
 
 ---
 

@@ -1,9 +1,9 @@
 ---
-name: task
-about: タスク用テンプレート
+name: new feature
+about: 新機能実装
 title: ''
 labels: ''
-assignees: ''
+assignees: '@DaigoWakabyashi'
 
 ---
 
