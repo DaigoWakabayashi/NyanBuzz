@@ -40,10 +40,17 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
+# Android related
 /android/app/debug
 /android/app/profile
 /android/app/release
+**/android/app/src/main/res/mipmap*/
+google-services.json
+
+# iOS related
+**/ios/Flutter/DartDefines.xcconfig
+ios/Podfile.lock
+GoogleService-Info.plist
 
 # FVM
 .fvm/flutter_sdk

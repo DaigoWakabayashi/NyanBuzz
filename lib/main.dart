@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 void main() {
+  // flavor の取得
+  const flavor = String.fromEnvironment('FLAVOR');
+  Logger().i('FLAVOR : $flavor');
   runApp(const MyApp());
 }
 
