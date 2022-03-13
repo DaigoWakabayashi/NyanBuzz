@@ -49,7 +49,6 @@ google-services.json
 
 # iOS related
 **/ios/Flutter/DartDefines.xcconfig
-ios/Podfile
 ios/Podfile.lock
 GoogleService-Info.plist
 
