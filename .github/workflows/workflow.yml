@@ -9,7 +9,7 @@ on:
       - develop
 
 jobs:
-  flutter_test:
+  flutter_test_and_analyze:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -20,3 +20,5 @@ jobs:
         run: ./.github/workflows/scripts/install-flutter.sh 2.10.3
       - name: flutter test
         run: flutter pub get && flutter test
+      - name: flutter analyze
+        run: flutter analyze
