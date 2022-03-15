@@ -20,6 +20,8 @@ jobs:
         run: ./.github/workflows/scripts/install-flutter.sh 2.10.3
       - name: flutter test
         run: flutter pub get && flutter test
+      - name: flutter channel stable
+        run: flutter channel stable
       - name: flutter doctor
         run: flutter doctor
       - name: flutter analyze
