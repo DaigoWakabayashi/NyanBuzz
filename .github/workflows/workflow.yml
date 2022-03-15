@@ -16,13 +16,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - name: "Install Flutter"
-        run: ./.github/workflows/scripts/install-flutter.sh 2.10.3
-      - name: flutter test
-        run: flutter pub get && flutter test
-      - name: flutter channel stable
-        run: flutter channel stable
-      - name: flutter doctor
-        run: flutter doctor
-      - name: flutter analyze
-        run: flutter analyze
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter analyze
