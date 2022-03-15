@@ -5,7 +5,6 @@ void main() {
   // flavor の取得
   const flavor = String.fromEnvironment('FLAVOR');
   Logger().i('FLAVOR : $flavor');
-  print('FLAVOR : $flavor');
   runApp(const MyApp());
 }
 
