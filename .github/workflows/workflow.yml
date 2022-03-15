@@ -9,14 +9,18 @@ on:
       - develop
 
 jobs:
-  flutter_test:
+  flutter_test_and_analyze:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - name: "Install Flutter"
-        run: ./.github/workflows/scripts/install-flutter.sh 2.10.3
-      - name: flutter test
-        run: flutter pub get && flutter test
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.10.3'
+          channel: 'stable'
+      - run: flutter config --no-enable-web
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter analyze
