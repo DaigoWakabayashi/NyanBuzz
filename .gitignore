@@ -52,5 +52,8 @@ google-services.json
 ios/Podfile.lock
 GoogleService-Info.plist
 
-# FVM
+# FVM related
 .fvm/flutter_sdk
+
+# Codecov related
+coverage
