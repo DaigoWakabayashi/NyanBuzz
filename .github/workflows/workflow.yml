@@ -22,5 +22,9 @@ jobs:
           channel: 'stable'
       - run: flutter config --no-enable-web
       - run: flutter pub get
-      - run: flutter test
+      - run: flutter test --no-test-assets --coverage --coverage-path=~/coverage/lcov.info
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ~/coverage/lcov.info
       - run: flutter analyze
