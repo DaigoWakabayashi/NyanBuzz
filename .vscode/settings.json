@@ -1,0 +1,35 @@
+{
+    // editor
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.guides.bracketPairs": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true,
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#85cc8e"
+    },
+    // dart
+    "dart.previewFlutterUiGuides": false,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.closingLabels": false,
+    "dart.runPubGetOnPubspecChanges": false,
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    // files
+    "files.autoSave": "onFocusChange",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.smoothScrolling": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    // .ts ファイル用の設定
+    "[typescript]": {
+        // "typescript.format.enable": false, // 組み込みのフォーマッターは無効にする
+        "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier を使う
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.formatOnPaste": true,
+    },
+}
