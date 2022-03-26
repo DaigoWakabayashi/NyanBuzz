@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "dev": "nyanbuzz-dev",
+    "prod": "nyanbuzz"
+  },
+  "targets": {}
+}
