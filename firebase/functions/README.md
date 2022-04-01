@@ -3,11 +3,18 @@
 - 環境変数の取得
 
 ```
-% firebase functions:config:get > .runtimeconfig.json
+functions % firebase functions:config:get > .runtimeconfig.json
 ```
 
 - Emulator の立ち上げ
 
 ```
-% npm run serve
+functions % npm run serve
+```
+
+- 関数の shell 実行
+
+```
+firebase % firebase functions:shell
+firebase > searchTweets('')
 ```
