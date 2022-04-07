@@ -1,7 +1,8 @@
 {
   "projects": {
     "dev": "nyanbuzz-dev",
-    "prod": "nyanbuzz"
+    "prod": "nyanbuzz",
+    "default": "nyanbuzz-dev"
   },
   "targets": {}
 }
