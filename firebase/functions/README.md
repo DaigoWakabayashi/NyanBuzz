@@ -12,9 +12,22 @@ functions % firebase functions:config:get > .runtimeconfig.json
 functions % npm run serve
 ```
 
+- 関数のデプロイ
+
+```
+functions % firebase deploy --only functions
+```
+
 - 関数の shell 実行
 
 ```
 firebase % firebase functions:shell
 firebase > searchTweets('')
+```
+
+- ポートの kill
+
+```
+% sudo lsof -i:8085
+% kill [ポート番号]
 ```
