@@ -1,6 +1,6 @@
 import * as firebaseAdmin from 'firebase-admin'
 import * as functions from 'firebase-functions'
-import TwitterApi from 'twitter-api-v2'
+// import TwitterApi from 'twitter-api-v2'
 
 // Firebaseプロジェクトの初期化
 firebaseAdmin.initializeApp(functions.config().firebase)
@@ -9,7 +9,7 @@ firebaseAdmin.initializeApp(functions.config().firebase)
 const db = firebaseAdmin.firestore()
 
 /// APIクライアントの作成（https://github.com/plhery/node-twitter-api-v2/blob/HEAD/doc/basics.md#client-basics）
-const client = new TwitterApi(functions.config().twitter.bearer_token)
+// const client = new TwitterApi(functions.config().twitter.bearer_token)
 
 export const searchTweets = functions
   .region('asia-northeast1')
