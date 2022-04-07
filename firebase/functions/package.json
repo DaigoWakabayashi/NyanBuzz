@@ -2,7 +2,7 @@
   "name": "functions",
   "scripts": {
     "build": "tsc",
-    "build:watch": "tsc --watch --preserveWatchOutput", 
+    "build:watch": "tsc --watch --preserveWatchOutput",
     "serve": "npm run build:watch | firebase emulators:start --import=./firestore_data --export-on-exit",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
