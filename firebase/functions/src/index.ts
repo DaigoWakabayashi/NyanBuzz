@@ -24,8 +24,9 @@ export const searchTweets = functions
       })
       // 直近7日間のツイートを検索する（https://github.com/plhery/node-twitter-api-v2/blob/HEAD/doc/v2.md#search-tweets-recent）
       const response = await client.v2.get('tweets/search/recent', {
-        query: 'ねこ',
+        query: 'ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ',
         max_results: 10,
+        expansions: ['author_id'],
       })
       const catTweets = response.data
       for (const tweet of catTweets) {
