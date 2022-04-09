@@ -35,7 +35,7 @@ export const searchTweets = functions
           '(ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ) -is:retweet -is:reply -is:quote has:media lang:ja',
         max_results: 10,
         expansions: ['author_id'],
-        'tweet.fields': ['created_at', 'public_metrics'],
+        'tweet.fields': ['created_at', 'public_metrics', 'possibly_sensitive'],
       })
       const catTweets = response.data
       for (const tweet of catTweets) {
