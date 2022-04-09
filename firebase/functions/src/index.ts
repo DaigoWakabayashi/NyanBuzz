@@ -23,8 +23,16 @@ export const searchTweets = functions
         createdAt: firebaseAdmin.firestore.FieldValue.serverTimestamp(),
       })
       // 直近7日間のツイートを検索する（https://github.com/plhery/node-twitter-api-v2/blob/HEAD/doc/v2.md#search-tweets-recent）
+      // クエリ条件：
+      // - 日本語
+      // - リツイートでない
+      // - 引用リツイートではない
+      // - リプライでない
+      // - (ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ) を含む
+      // - 画像つき
       const response = await client.v2.get('tweets/search/recent', {
-        query: 'ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ',
+        query:
+          '(ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ) -is:retweet -is:reply -is:quote has:media lang:ja',
         max_results: 10,
         expansions: ['author_id'],
       })
