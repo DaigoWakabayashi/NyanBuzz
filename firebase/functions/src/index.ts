@@ -17,11 +17,6 @@ export const searchTweets = functions
   .timeZone('Asia/Tokyo')
   .onRun(async (context) => {
     try {
-      console.log('This function is running')
-      await db.collection('tweets').add({
-        text: 'にゃんにゃん',
-        createdAt: firebaseAdmin.firestore.FieldValue.serverTimestamp(),
-      })
       // 直近7日間のツイートを検索する（https://github.com/plhery/node-twitter-api-v2/blob/HEAD/doc/v2.md#search-tweets-recent）
       // クエリ条件：
       // - 日本語
@@ -39,7 +34,9 @@ export const searchTweets = functions
       })
       const catTweets = response.data
       for (const tweet of catTweets) {
-        console.log(`ツイート : %j`, tweet)
+        // ドキュメントIDをツイートIDと一致させることで、
+        // 同一のツイートを取得した場合でも update 処理となる
+        await db.collection('tweets').doc(tweet['id']).set(tweet)
       }
       return null
     } catch (error) {
