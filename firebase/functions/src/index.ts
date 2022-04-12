@@ -36,7 +36,12 @@ export const searchTweets = functions
       for (const tweet of catTweets) {
         // ドキュメントIDをツイートIDと一致させることで、
         // 同一のツイートを取得した場合でも update 処理となる
-        await db.collection('tweets').doc(tweet['id']).set(tweet)
+        if (tweet.possibly_sensitive) {
+          // センシティブなツイート
+          console.log(`センシティブなTweet : %j`, tweet)
+        } else {
+          await db.collection('tweets').doc(tweet['id']).set(tweet)
+        }
       }
       return null
     } catch (error) {
