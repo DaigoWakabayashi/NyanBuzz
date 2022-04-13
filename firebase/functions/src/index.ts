@@ -31,12 +31,14 @@ export const searchTweets = functions
         max_results: 100,
         expansions: ['author_id'],
         'tweet.fields': ['created_at', 'public_metrics', 'possibly_sensitive'],
+        'user.fields': ['profile_image_url'],
       })
       const catTweets = response.data
       for (const tweet of catTweets) {
         // ドキュメントIDをツイートIDと一致させることで、
         // 同一のツイートを取得した場合でも update 処理となる
         await db.collection('tweets').doc(tweet['id']).set(tweet)
+        console.log(`ツイート ${catTweets.indexOf(tweet)} %j`, tweet)
       }
       return null
     } catch (error) {
