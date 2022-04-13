@@ -13,7 +13,7 @@ const client = new TwitterApi(functions.config().twitter.bearer_token)
 
 export const searchTweets = functions
   .region('asia-northeast1')
-  .pubsub.schedule('every 15 minutes from 0:00 to 23:59')
+  .pubsub.schedule('every 5 minutes from 0:00 to 23:59')
   .timeZone('Asia/Tokyo')
   .onRun(async (context) => {
     try {
@@ -28,7 +28,7 @@ export const searchTweets = functions
       const response = await client.v2.get('tweets/search/recent', {
         query:
           '(ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ) -is:retweet -is:reply -is:quote has:media lang:ja',
-        max_results: 10,
+        max_results: 100,
         expansions: ['author_id'],
         'tweet.fields': ['created_at', 'public_metrics', 'possibly_sensitive'],
       })
