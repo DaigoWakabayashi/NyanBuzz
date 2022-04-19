@@ -23,11 +23,11 @@ export const searchTweets = functions
     try {
       // クエリ条件：
       // - 日本語
-      // - 画像 or 動画付き
+      // - 画像付き
       // - 最低 500 いいね
       // - (ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ) を含む
       const response = await client.v1.get('search/tweets.json', {
-        q: 'lang:ja filter:media min_faves:500 ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ',
+        q: 'lang:ja filter:images min_faves:500 ねこ OR 猫 OR ネコ OR ﾈｺ OR にゃんこ OR ニャンコ OR ﾆｬﾝｺ',
         max_results: 100,
         tweet_mode: 'extended',
       })
