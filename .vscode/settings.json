@@ -32,4 +32,7 @@
         "editor.formatOnType": true,
         "editor.formatOnPaste": true,
     },
+    "cSpell.words": [
+        "nyanbuzz"
+    ],
 }

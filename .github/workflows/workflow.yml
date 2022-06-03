@@ -2,7 +2,7 @@ name: workflow
 
 on:
   pull_request:
-    types: [ opened, synchronize ]
+    types: [opened, synchronize]
   push:
     branches:
       - main
@@ -18,8 +18,8 @@ jobs:
           fetch-depth: 1
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.10.3'
-          channel: 'stable'
+          flutter-version: "3.0.1"
+          channel: "stable"
       - run: flutter config --no-enable-web
       - run: flutter pub get
       - run: flutter test --no-test-assets --coverage --coverage-path=~/coverage/lcov.info
