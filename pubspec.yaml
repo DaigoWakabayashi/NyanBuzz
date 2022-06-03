@@ -20,7 +20,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.9.2
   flutter_test:
     sdk: flutter
-  pedantic_mono: ^1.17.0
+  pedantic_mono: ^1.19.2
 
 flutter:
   uses-material-design: true
